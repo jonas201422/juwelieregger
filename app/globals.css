@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink text-ivory font-sans antialiased;
+  background-image: var(--grain-texture), theme('backgroundImage.grain');
+  background-size: cover;
+}
+
+:root {
+  --grain-texture: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.03), transparent 20%),
+    radial-gradient(circle at 90% 0%, rgba(214,181,110,0.12), transparent 25%);
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+}
+
+.btn-primary {
+  @apply bg-gold text-ink hover:brightness-110 shadow-glow;
+}
+
+.btn-secondary {
+  @apply border border-haze text-ivory hover:border-gold hover:text-gold;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+.card {
+  @apply rounded-2xl border border-haze bg-graphite/80 p-6 shadow-glow backdrop-blur;
+}
+
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #f5f1e8, #d6b56e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+input, textarea {
+  @apply bg-transparent border border-haze rounded-xl px-4 py-3 text-sm text-ivory placeholder:text-ivory/60 focus:border-gold focus:outline-none transition-colors duration-200;
+}
+
+label {
+  @apply text-sm text-ivory/80;
+}
+
+::selection {
+  background: #d6b56e44;
+}
